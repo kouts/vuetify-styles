@@ -1,0 +1,10 @@
+// Place generic SASS variables here - NOT COLORS
+// If you need custom colors these need to be defined inside the vuetify-light-theme-colors.scss
+// file as these are shared with the Vuetify theme.
+
+// This file needs to be imported into the components using the @use keyword
+// check https://sass-lang.com/documentation/at-rules/use
+
+$spacer: 4px;
+$field-focused-border-width: 1px;
+$border-radius-root: 4px;

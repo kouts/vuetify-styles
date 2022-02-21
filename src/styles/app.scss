@@ -1,0 +1,88 @@
+// We use Vuetify CSS variables for colors, NOT SCSS variables
+// Examples:
+// Primary color: rgb(var(--v-theme-primary))
+// Text color: rgba(var(--v-theme-on-surface))
+// Accent color: rgb(var(--v-theme-accent))
+// Background color: rgba(var(--v-theme-background))
+
+@use './variables' as v;
+
+// We define the accent color as an SCSS variable here so that
+// we can use it in elements that get rendered outside the Vuetify app.
+// E.g nprogress
+$accent: #3fb27f;
+
+/* Global */
+a {
+  color: rgba(var(--v-theme-primary-lighten-1));
+}
+
+/* Utils */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Appbar */
+.v-app-bar {
+  &.p-app-bar {
+    a {
+      text-decoration: none;
+      opacity: 0.8;
+      &.router-link-active,
+      .router-link-exact-active {
+        opacity: 1;
+      }
+    }
+    select,
+    a,
+    i {
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+    }
+  }
+}
+
+/* Push footer to the bottom */
+.v-application__wrap {
+  min-height: 100vh;
+}
+
+/* Custom class to test Vuetify variables exposure */
+.info-box {
+  position: relative;
+  padding: v.$spacer * 3;
+  border: 1px solid transparent;
+  border-radius: v.$border-radius-root;
+  background: rgb(var(--v-theme-info));
+  color: rgb(var(--v-theme-on-info));
+}
+
+/* Testing exposure of "on" Vuetify variables */
+.text-secondary-custom {
+  color: rgb(var(--v-theme-on-secondary));
+}
+
+/* Progress bar */
+#nprogress {
+  .bar {
+    background: $accent;
+  }
+  .peg {
+    box-shadow: 0 0 10px $accent, 0 0 5px $accent;
+  }
+  .spinner-icon {
+    border-top-color: $accent;
+    border-left-color: $accent;
+  }
+}
